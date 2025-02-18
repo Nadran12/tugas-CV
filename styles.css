@@ -1,0 +1,241 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    z-index: 1000;
+    width: 100%;
+}
+
+.navbar h1 {
+    font-size: 24px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #4CAF50;
+}
+
+/* Main Content Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 80px; /* Add padding to the top of the container to prevent content from being hidden */
+    margin-top: 220px;
+}
+
+/* Section Styles */
+.section {
+    padding: 120px 20px;
+    background-color: white;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px); 
+    transition: opacity 0.6s ease, transform 0.6s ease, visibility 0s 0.6s;
+    height: 100vh;
+}
+
+.section.active {
+    opacity: 1;
+    visibility: visible; 
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease, visibility 0s 0s;
+}
+
+/* education Section - Centering content */
+#education .container-content {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Stack items vertically */
+    text-align: left; /* Center the text */
+    height: 100%; /* Ensure the container takes full available height */
+}
+
+/* education Section Content */
+#education h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+#education ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#education ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Projects Section - Centering content */
+#projects .container-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 100px;
+}
+
+/* Projects Section Title */
+#projects h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Projects Cards Container */
+.projects-container {
+    display: flex;
+    justify-content: space-between; /* Distribute cards evenly */
+    gap: 20px; /* Space between the cards */
+    flex-wrap: wrap; /* Allow the cards to wrap on smaller screens */
+}
+
+/* Single Project Card */
+.project-card {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.project-card p {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/* Hover Effects on Project Cards */
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* contact Section - Centering content */
+#contact .container-content {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Stack items vertically */
+    text-align: left; /* Center the text */
+    height: 100%; /* Ensure the container takes full available height */
+}
+
+/* contact Section Content */
+#contact h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+#contact ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#contact ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Ensure elements are aligned to the left */
+    margin-top: 225px;
+}
+
+.profile-image {
+    margin-right: 20px; /* Space between image and text */
+}
+
+.profile-image img {
+    width: 150px; /* Size of the profile image */
+    height: 150px;
+    border-radius: 50%; /* Make the image round */
+}
+
+.profile-info h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.profile-info p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column; /* Stack the profile image and text on top of each other for small screens */
+        text-align: center; /* Center align text on small screens */
+    }
+
+    .profile-info h2 {
+        font-size: 24px;
+    }
+
+    .profile-info p {
+        font-size: 16px;
+    }
+
+    .container-content {
+        padding: 20px;
+    }
+}
